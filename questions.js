@@ -68,18 +68,15 @@ var TIMER;
 function askQuestion() {
   var q = questions[countQuestion];
 
-  console.log(q);
-
   question.textContent = q.question;
   answerA.textContent = q.answerA;
   answerB.textContent = q.answerB;
   answerC.textContent = q.answerC;
   answerD.textContent = q.answerD;
 }
-
+//adding a click function on the start button
 startElement.addEventListener("click", startQuestions);
 //start the quiz
-
 function startQuestions() {
   page.style.display = "none";
   askQuestion();
@@ -89,16 +86,14 @@ function startQuestions() {
 }
 
 function timeCounter() {
-  
-    if (startTime > endTime) {
-      counter.textContent = startTime;
-      startTime--;
-    } else {
-      startTime = 0;
-    }
-  
+  if (startTime > endTime) {
+    counter.textContent = startTime;
+    startTime--;
+  } else {
+    startTime = 0;
+  }
 }
-
+//adding a click button and function on the choices
 answerA.addEventListener("click", function() {
   checkAnswer("A");
 });
@@ -127,11 +122,9 @@ function checkAnswer(input) {
     countQuestion++;
     askQuestion();
   } else {
-    if(boolean === true) {
+    if (boolean === true) {
       startTime = startTime - 15;
     }
     clearInterval(TIMER);
   }
 }
-
-
