@@ -10,6 +10,9 @@ var answerB = document.querySelector("#choice2");
 var answerC = document.querySelector("#choice3");
 var answerD = document.querySelector("#choice4");
 var rightWrong = document.querySelector("#answer-text");
+var counter = document.querySelector("#counter");
+var answer = document.querySelector("#answer");
+var scoreDiv = document.querySelector("#score");
 
 var questions = [
   {
@@ -38,7 +41,7 @@ var questions = [
   },
   {
     question:
-      "Name the fictional character whose household duties did not prevent her determination to dance.",
+      "Name the DISNEY fictional character whose household duties did not prevent her determination to dance.",
     answerA: "Belle",
     answerB: "Merida",
     answerC: "Snow White",
@@ -48,7 +51,7 @@ var questions = [
   {
     question: "This NFL team logo contains a flower.",
     answerA: "Browns",
-    answerB: "Chargers",
+    answerB: "Redskins",
     answerC: "Saints",
     answerD: "Patriots",
     correct: "C"
@@ -57,10 +60,15 @@ var questions = [
 
 var lastQuestion = questions.length - 1;
 
-var qCount = 0;
+let countQuestion = 0;
+var startTime = 75;
+var endTime = 0;
+var TIMER;
 
 function askQuestion() {
-  var q = questions[qCount];
+  var q = questions[countQuestion];
+
+  console.log(q);
 
   question.textContent = q.question;
   answerA.textContent = q.answerA;
@@ -76,4 +84,54 @@ function startQuestions() {
   page.style.display = "none";
   askQuestion();
   quiz.style.display = "block";
+  timeCounter();
+  TIMER = setInterval(timeCounter, 1000);
 }
+
+function timeCounter() {
+  
+    if (startTime > endTime) {
+      counter.textContent = startTime;
+      startTime--;
+    } else {
+      startTime = 0;
+    }
+  
+}
+
+answerA.addEventListener("click", function() {
+  checkAnswer("A");
+});
+answerB.addEventListener("click", function() {
+  checkAnswer("B");
+});
+answerC.addEventListener("click", function() {
+  checkAnswer("C");
+});
+answerD.addEventListener("click", function() {
+  checkAnswer("D");
+});
+
+function checkAnswer(input) {
+  var boolean = false;
+  if (input === questions[countQuestion].correct) {
+    answer.textContent = "Correct";
+  } else {
+    answer.textContent = "Wrong!";
+    boolean = true;
+  }
+  if (boolean === true) {
+    startTime = startTime - 15;
+  }
+  if (countQuestion < lastQuestion) {
+    countQuestion++;
+    askQuestion();
+  } else {
+    if(boolean === true) {
+      startTime = startTime - 15;
+    }
+    clearInterval(TIMER);
+  }
+}
+
+

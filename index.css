@@ -1,15 +1,19 @@
-.content{
-    margin-top: 60px;
-    padding: 20px;
-    width: 100%;
+.content {
+  margin-top: 60px;
+  padding: 20px;
+  width: 100%;
 }
 
 #intro {
-    width: 100%;
-    font-weight: 900;
-    
+  width: 100%;
+  font-weight: 900;
 }
 
 #auth-image {
-    border-radius: 50%;
+  border-radius: 50%;
+}
+
+#choice1, #choice2, #choice3, #choice4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
