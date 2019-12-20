@@ -1,18 +1,19 @@
-var pageElement = document.querySelector("#main-page");
-var h1Element = document.querySelector("#intro");
-var h4Element = document.querySelector("#intro-2");
+
 var startElement = document.querySelector("#start");
-var quizElement = document.querySelector("#quiz");
-var questionElement = document.querySelector("#question");
-var choicesElement = document.querySelector("#choices");
+var intro = document.querySelector('#intro');
+var intro2 = document.querySelector('#intro-2');
+var question = document.querySelector("#question");
 var answerA = document.querySelector("#choice1");
 var answerB = document.querySelector("#choice2");
 var answerC = document.querySelector("#choice3");
 var answerD = document.querySelector("#choice4");
-var rightWrong = document.querySelector("#answer-text");
 var counter = document.querySelector("#counter");
 var answer = document.querySelector("#answer");
-var scoreDiv = document.querySelector("#score");
+var show = document.querySelector('#show');
+var final = document.querySelector('#final');
+var done = document.querySelector('#done');
+var initials = document.querySelector('#initials');
+var send = document.querySelector('#send');
 
 var questions = [
   {
@@ -21,7 +22,7 @@ var questions = [
     answerB: "Whale",
     answerC: "Pufferfish",
     answerD: "Starfish",
-    correct: "A"
+    item: "A"
   },
   {
     question: "Which country does the sport of pelato come from?",
@@ -29,7 +30,7 @@ var questions = [
     answerB: "Italy",
     answerC: "Mexico",
     answerD: "Greece",
-    correct: "A"
+    item: "A"
   },
   {
     question: "Which ocean surrounds the Maldives?",
@@ -37,7 +38,7 @@ var questions = [
     answerB: "Atlantic",
     answerC: "Arctic",
     answerD: "Indian",
-    correct: "D"
+    item: "D"
   },
   {
     question:
@@ -46,7 +47,7 @@ var questions = [
     answerB: "Merida",
     answerC: "Snow White",
     answerD: "Cinderella",
-    correct: "D"
+    item: "D"
   },
   {
     question: "This NFL team logo contains a flower.",
@@ -54,7 +55,7 @@ var questions = [
     answerB: "Redskins",
     answerC: "Saints",
     answerD: "Patriots",
-    correct: "C"
+    item: "C"
   }
 ];
 
@@ -74,6 +75,10 @@ function askQuestion() {
   answerC.textContent = q.answerC;
   answerD.textContent = q.answerD;
 }
+
+intro.textContent = "Trivia Quiz CHALLENGE";
+intro2.textContent = "The following quiz questions are suitable for all age groups, covering a wide range of topics so everyone can join in the fun.";
+startElement.textContent = "Start";
 //adding a click function on the start button
 startElement.addEventListener("click", startQuestions);
 //start the quiz
@@ -109,22 +114,33 @@ answerD.addEventListener("click", function() {
 
 function checkAnswer(input) {
   var boolean = false;
-  if (input === questions[countQuestion].correct) {
-    answer.textContent = "Correct";
+  if (input === questions[countQuestion].item) {
+    answer.textContent = "item. Good job!";
   } else {
     answer.textContent = "Wrong!";
     boolean = true;
   }
-  if (boolean === true) {
+  if (boolean) {
     startTime = startTime - 15;
   }
   if (countQuestion < lastQuestion) {
     countQuestion++;
     askQuestion();
   } else {
-    if (boolean === true) {
-      startTime = startTime - 15;
+    if (startTime < 0) {
+      startTime = 0;
     }
     clearInterval(TIMER);
+    quiz.style.display = "none";
+    show.style.display = "block";
+    showScore(startTime);
+
   }
+}
+
+function showScore(input) {
+  done.textContent = "All done!";
+  final.textContent = "Your final score is: " + input + " points.";
+  initials.textContent = "Please enter your initials: ";
+  send.textContent = "Submit";
 }
