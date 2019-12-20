@@ -2,6 +2,7 @@
 var startElement = document.querySelector("#start");
 var intro = document.querySelector('#intro');
 var intro2 = document.querySelector('#intro-2');
+var rules = document.querySelector('#rules');
 var question = document.querySelector("#question");
 var answerA = document.querySelector("#choice1");
 var answerB = document.querySelector("#choice2");
@@ -78,6 +79,7 @@ function askQuestion() {
 
 intro.textContent = "Trivia Quiz CHALLENGE";
 intro2.textContent = "The following quiz questions are suitable for all age groups, covering a wide range of topics so everyone can join in the fun.";
+rules.textContent = "Score is calculated by time remaining. Answering quickly and correctly results in a higher score. Answering incorrectly results in a time penalty (for example, 15 seconds are subtracted from time remaining). Good Luck!"
 startElement.textContent = "Start";
 //adding a click function on the start button
 startElement.addEventListener("click", startQuestions);
@@ -99,16 +101,16 @@ function timeCounter() {
   }
 }
 //adding a click button and function on the choices
-answerA.addEventListener("click", function() {
+answerA.addEventListener("click", function () {
   checkAnswer("A");
 });
-answerB.addEventListener("click", function() {
+answerB.addEventListener("click", function () {
   checkAnswer("B");
 });
-answerC.addEventListener("click", function() {
+answerC.addEventListener("click", function () {
   checkAnswer("C");
 });
-answerD.addEventListener("click", function() {
+answerD.addEventListener("click", function () {
   checkAnswer("D");
 });
 
