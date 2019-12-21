@@ -4,7 +4,7 @@
   width: 100%;
 }
 
-h1 {
+#intro, #text {
   width: 100%;
   font-weight: 900;
 }

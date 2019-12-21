@@ -16,7 +16,11 @@ var done = document.querySelector('#done');
 var initials = document.querySelector('#initials');
 var send = document.querySelector('#send');
 
+var initial = document.querySelector('#inlineFormInput');
 
+
+var initialKey = 'initials';
+var scoreKey = 'score';
 
 //an array of questions, the options and the correct answer
 var questions = [
@@ -127,7 +131,7 @@ answerD.addEventListener("click", function () {
 function checkAnswer(input) {
   var boolean = false;
   if (input === questions[countQuestion].item) {
-    answer.textContent = "item. Good job!";
+    answer.textContent = "Correct!";
   } else {
     answer.textContent = "Wrong!";
     boolean = true;
@@ -160,8 +164,18 @@ function checkAnswer(input) {
 function showScore(input) {
   done.textContent = "All done!";
   final.textContent = "Your final score is: " + input + " points.";
-  initials.textContent = "Enter initials: ";
+  initials.textContent = "Enter your name: ";
   send.textContent = "Submit";
 }
 
+send.addEventListener('click', function () {
 
+  var user = initial.value;
+  if (startTime > localStorage.getItem('score') || localStorage.getItem('score') === null) {
+    localStorage.setItem(initialKey, user);
+    localStorage.setItem(scoreKey, startTime);
+
+  }
+
+
+});
