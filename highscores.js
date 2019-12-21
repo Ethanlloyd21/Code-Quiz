@@ -26,7 +26,7 @@ function retrieveInfo() {
     var points = localStorage.getItem(scoreKey);
     //if the name or score is null print 'No High Score'
     //if not print the user name and the score;
-    if (points === 0 || points === null || user === null) {
+    if (points === "0" || points === null || user === null) {
         initial.textContent = "No high score";
     }
     else {
