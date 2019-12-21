@@ -1,3 +1,3 @@
 # Code-Quiz
 
-![](responsive.PNG)
+![](quizHome.PNG)
