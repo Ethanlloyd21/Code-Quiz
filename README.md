@@ -4,12 +4,11 @@
 
 A company probably may asked to you complete a coding assessment. These assessments are typically a combination of multiple-choice questions and interactive challenges. In this project, the challenge is to build a code quiz with multiple-choice questions.
 
-![](/images/quizHome.PNG)
 
 ## How the web app works?
 
 * The user arrives at the landing page and is presented with a call-to-action to "Start Quiz." Also note the navigation option to "View Highscores" and the "Time" value set at 75 seconds.
-
+![](/images/quizHome.PNG)
 
 * Clicking the "Start Quiz" button presents the user with a series of questions. The timer is initialized with a value and immediately begins countdown.
 ![](/images/questions.PNG)
