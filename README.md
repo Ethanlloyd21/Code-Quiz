@@ -29,5 +29,10 @@ A company probably may asked to you complete a coding assessment. These assessme
 * HTML
 * CSS
 
+## .gitattribute
 
+* a simple text file that gives attributes to pathnames (from HTML to JavaScript)
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
