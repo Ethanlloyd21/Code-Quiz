@@ -1,3 +1,3 @@
 # Code-Quiz
 
-![](quizHome.PNG)
+![](/images/quizHome.PNG)
