@@ -17,6 +17,11 @@ var initials = document.querySelector('#initials');
 var send = document.querySelector('#send');
 var initial = document.querySelector('#inlineFormInput');
 
+//variables for the audio on the buttons
+var correct = document.querySelector('#correct');
+var wrong = document.querySelector('#wrong');
+
+
 //varialbes for the local storage
 var initialKey = 'initials';
 var scoreKey = 'score';
@@ -125,14 +130,17 @@ answerD.addEventListener("click", function () {
   checkAnswer("D");
 });
 
+
 //checking the user's answer 
 //printing if the user got the correct answer or wrong answer
 function checkAnswer(input) {
   var boolean = false;
   if (input === questions[countQuestion].item) {
     answer.textContent = "Correct!";
+    correct.play(); //plays a sound if the answer is correct
   } else {
     answer.textContent = "Wrong!";
+    wrong.play(); //plays a sound if the answer is incorrect
     boolean = true; //setting the boolean value to "true" if the user picked the wrong answer.
   }
   //if the user picked the wrong answer, 15 points will be deducted on the time points
