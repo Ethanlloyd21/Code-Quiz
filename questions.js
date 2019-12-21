@@ -15,10 +15,9 @@ var final = document.querySelector('#final');
 var done = document.querySelector('#done');
 var initials = document.querySelector('#initials');
 var send = document.querySelector('#send');
-
 var initial = document.querySelector('#inlineFormInput');
 
-
+//varialbes for the local storage
 var initialKey = 'initials';
 var scoreKey = 'score';
 
@@ -76,7 +75,7 @@ var TIMER;
 //function that prints the question and the answer in the buttons
 function askQuestion() {
   var q = questions[countQuestion];
-
+  //printing the questions and choices
   question.textContent = q.question;
   answerA.textContent = q.answerA;
   answerB.textContent = q.answerB;
@@ -99,7 +98,7 @@ function startQuestions() {
   askQuestion();
   quiz.style.display = "block"; //displaying the quiz div
   timeCounter();
-  TIMER = setInterval(timeCounter, 1000);
+  TIMER = setInterval(timeCounter, 1000); //setting the time interval
 }
 
 //setting the time and displying it
@@ -134,7 +133,7 @@ function checkAnswer(input) {
     answer.textContent = "Correct!";
   } else {
     answer.textContent = "Wrong!";
-    boolean = true;
+    boolean = true; //setting the boolean value to "true" if the user picked the wrong answer.
   }
   //if the user picked the wrong answer, 15 points will be deducted on the time points
   if (boolean) {
@@ -168,14 +167,15 @@ function showScore(input) {
   send.textContent = "Submit";
 }
 
+//send button
+//if the score is greater than the the score in the local storage then set the new score 
+//in the local storage. 
 send.addEventListener('click', function () {
-
   var user = initial.value;
   if (startTime > localStorage.getItem('score') || localStorage.getItem('score') === null) {
     localStorage.setItem(initialKey, user);
     localStorage.setItem(scoreKey, startTime);
 
   }
-
 
 });
