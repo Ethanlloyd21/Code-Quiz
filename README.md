@@ -10,7 +10,7 @@ A company probably may asked to you complete a coding assessment. These assessme
 * The user arrives at the landing page and is presented with a call-to-action to "Start Quiz." Also note the navigation option to "View Highscores" and the "Time" value set at 75 seconds.
 ![](/images/quizHome.PNG)
 
-* Clicking the "Start Quiz" button presents the user with a series of questions. The timer is initialized with a value and immediately begins countdown.
+* Clicking the "Start Quiz" button presents the user with a series of questions. The timer is initialized with a value and immediately begins countdown. A sound will trigger for the correct choice and for the incorrect choice button.
 ![](/images/questions.PNG)
 
 
@@ -29,4 +29,10 @@ A company probably may asked to you complete a coding assessment. These assessme
 * HTML
 * CSS
 
+## .gitattribute
+
+* a simple text file that gives attributes to pathnames (from HTML to JavaScript)
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
