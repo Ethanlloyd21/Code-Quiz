@@ -271,11 +271,15 @@ function letStart(input) {
 
   //setting the time and displying it
   function timeCounter() {
-    if (startTime > endTime) {
+    if (startTime >= endTime) {
       counter.textContent = startTime;
       startTime--;
     } else {
       startTime = 0;
+      clearInterval(TIMER);
+      quiz.style.display = "none";
+      show.style.display = "block";
+      showScore(startTime);
     }
   }
 
@@ -316,15 +320,20 @@ function letStart(input) {
       countQuestion++;
       askQuestion();
     } else {
-      if (startTime < 0) {
+      if (startTime <= 0) {
         startTime = 0;
+        clearInterval(TIMER);
+        quiz.style.display = "none";
+        show.style.display = "block";
+        showScore(startTime);
+      } else {
+        //if so, stop the timer score
+        //hide the quiz div and display the show the score div.
+        clearInterval(TIMER);
+        quiz.style.display = "none";
+        show.style.display = "block";
+        showScore(startTime);
       }
-      //if so, stop the timer score
-      //hide the quiz div and display the show the score div.
-      clearInterval(TIMER);
-      quiz.style.display = "none";
-      show.style.display = "block";
-      showScore(startTime);
 
     }
   }
