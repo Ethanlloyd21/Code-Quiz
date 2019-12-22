@@ -7,7 +7,7 @@ A company probably may asked to you complete a coding assessment. These assessme
 
 ## How the web app works?
 
-* The user arrives at the landing page and is presented with different category to choose from." Also note the navigation option to "View Highscores" and the "Time" value set at 75 seconds.
+* The user arrives at the landing page and is presented with 4 different category (random, sports, geography and animals) to choose from." Also note the navigation option to "View Highscores" and the "Time" value set at 75 seconds.
 ![](/images/home.PNG)
 
 * Clicking the category button presents the user with a series of questions. The timer is initialized with a value and immediately begins countdown. A sound will trigger for the correct choice and for the incorrect choice button.
