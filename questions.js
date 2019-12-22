@@ -216,7 +216,7 @@ var qGeo = [
 //printing the text on the main html (index.html)
 intro.textContent = "Trivia Quiz CHALLENGE";
 intro2.textContent = "The following quiz questions are suitable for all age groups, covering a wide range of topics so everyone can join in the fun.";
-rules.textContent = "Score is calculated by time remaining. Answering quickly and correctly results in a higher score. Answering incorrectly results in a time penalty (for example, 15 seconds are subtracted from time remaining). Good Luck!";
+rules.textContent = "Score is calculated by time remaining. Answering quickly and correctly results in a higher score. Answering incorrectly results in a time penalty (15 seconds are subtracted from time remaining). Good Luck!";
 startElement.textContent = "Random";
 animalElement.textContent = "Animals";
 sportsElement.textContent = "Sports";
