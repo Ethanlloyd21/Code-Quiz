@@ -13,12 +13,19 @@
   border-radius: 50%;
 }
 
-#choice1, #choice2, #choice3, #choice4 {
+#choice1, #choice2, #choice3, #choice4, #start, #animal, #sports, #geography {
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-#intro-2 {
+#intro-2, #category {
+  font-weight: 400;
   color: #5bc0de
+  
+}
+
+#rules {
+  font-weight: 600;
+  font-size: 12px;
 }
 
