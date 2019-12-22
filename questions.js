@@ -241,7 +241,6 @@ geoElement.addEventListener("click", function () {
 //function that does everything
 function letStart(input) {
   var questions = input;
-  //getting the last question range
   //initializing the question count, the start time score, the end time and the timer interval
   let countQuestion = 0;
   var startTime = 75;
@@ -271,11 +270,11 @@ function letStart(input) {
 
   //setting the time and displying it
   function timeCounter() {
-    if (startTime >= endTime) {
+    if (startTime > endTime) {
       counter.textContent = startTime;
       startTime--;
     } else {
-      startTime = 0;
+      startTime = 0; //if the timer hits 0 at any point, the quiz ends
       clearInterval(TIMER);
       quiz.style.display = "none";
       show.style.display = "block";
