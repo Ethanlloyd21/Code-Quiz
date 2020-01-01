@@ -300,22 +300,26 @@ function letStart(input) {
   //checking the user's answer 
   //printing if the user got the correct answer or wrong answer
   function checkAnswer(input) {
-    var boolean = false;
+    var isCorrect = false;
     if (input === questions[countQuestion].item) {
       answer.textContent = "Correct!";
       correct.play(); //plays a sound if the answer is correct
     } else {
       answer.textContent = "Wrong!";
       wrong.play(); //plays a sound if the answer is incorrect
-      boolean = true; //setting the boolean value to "true" if the user picked the wrong answer.
+      isCorrect = true; //setting the isCorrect value to "true" if the user picked the wrong answer.
     }
     //if the user picked the wrong answer, 15 points will be deducted on the time points
-    if (boolean) {
+    if (isCorrect) {
       startTime = startTime - 15;
     }
     //if the the count is less than the length of the question, then continue asking questions.
     //if the score is negative then set the score to zero.
-    if (countQuestion < 4) { //since there are 5 questions each category
+    //console.log(arrys.length);
+    console.log(questions.length);
+    //console.log(input.length);
+    //console.log(q.length);
+    if (countQuestion < questions.length - 1) { //since there are 5 questions each category
       countQuestion++;
       askQuestion();
     } else {
