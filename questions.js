@@ -315,10 +315,6 @@ function letStart(input) {
     }
     //if the the count is less than the length of the question, then continue asking questions.
     //if the score is negative then set the score to zero.
-    //console.log(arrys.length);
-    console.log(questions.length);
-    //console.log(input.length);
-    //console.log(q.length);
     if (countQuestion < questions.length - 1) { //since there are 5 questions each category
       countQuestion++;
       askQuestion();
