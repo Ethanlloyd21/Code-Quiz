@@ -36,3 +36,6 @@ A company probably may asked to you complete a coding assessment. These assessme
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
+## Author
+* Lloyd Marcelino, 2020
+
